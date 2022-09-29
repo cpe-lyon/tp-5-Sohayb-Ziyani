@@ -39,7 +39,11 @@ La commande `df -T` ne marche pas puisque nos partitions ne sont pas encore mont
 
 ### 6. Faites en sorte que les deux partitions créées soient montées automatiquement au démarrage de la machine, respectivement dans les points de montage /data et /win (vous pourrez vous passer des UUID en raison de l’impossibilité d’effectuer des copier-coller)
 
-Pour que les deux partitions soient montées automatiquement il faut ajouter des lignes dans le dossiers `/etc/fstab` qui sont : `/dev/sdb1 /data ext4 defaults 0 0` et `/dev/sdb2 /win ntfs defaults 0 0` 
+Pour que les deux partitions soient montées automatiquement il faut ajouter des lignes dans le dossiers `/etc/fstab` qui sont : `/dev/sdb1 /data ext4 defaults 0 0` et 
+`/dev/sdb2 /win ntfs defaults 0 0` 
 
 ![image](https://user-images.githubusercontent.com/80455771/192988313-d9332fd2-9542-4070-a0ec-96499e3f2552.png)
 
+### 7. Utilisez la commande mount puis redémarrez votre VM pour valider la configuration
+
+On utilise les commandes : `mount /dev/sdb1` / `mount /dev/sdb2` / `mount -a` (pour forcer la prise en compte des modifications) 
