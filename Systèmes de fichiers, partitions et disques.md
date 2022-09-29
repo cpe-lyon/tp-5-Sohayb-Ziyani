@@ -35,13 +35,13 @@ On peut voir que les deux partitions ont bien été crée :
 
 ### 5. Pourquoi la commande df -T, qui affiche le type de système de fichier des partitions, ne fonctionne-telle pas sur notre disque ?
 
-La commande 'df -T' ne marche pas puisque nos partitions ne sont pas encore montées.
+La commande `df -T` ne marche pas puisque nos partitions ne sont pas encore montées.
 
 ### 6. Faites en sorte que les deux partitions créées soient montées automatiquement au démarrage de la machine, respectivement dans les points de montage /data et /win (vous pourrez vous passer des UUID en raison de l’impossibilité d’effectuer des copier-coller)
 
-Pour que les deux partitions soient montées automatiquement il faut ajouter des lignes dans le dossiers '/etc/fstab' qui sont :
-/dev/sdb1 /data defaults 0 0
-/dev/sdb2 /win defaults 0 0 
+Pour que les deux partitions soient montées automatiquement il faut ajouter des lignes dans le dossiers `/etc/fstab` qui sont :
+`/dev/sdb1 /data ext4 defaults 0 0`
+`/dev/sdb2 /win ntfs defaults 0 0` 
 
 ![image](https://user-images.githubusercontent.com/80455771/192988313-d9332fd2-9542-4070-a0ec-96499e3f2552.png)
 
